@@ -5,6 +5,7 @@ const {
   marketClosingTIme,
   isMarketOpen,
 } = require("./datetime_helpers");
+const { debounceWithBurst } = require("./timers");
 
 module.exports = {
   capitalize,
@@ -14,4 +15,5 @@ module.exports = {
   marketOpeningTime,
   marketClosingTIme,
   isMarketOpen,
+  debounceWithBurst,
 };

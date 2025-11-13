@@ -1,11 +1,7 @@
-const { kotakNeoService } = require("./kotak_neo");
 const { redisService } = require("./redis");
-const { hsWebSocketService } = require("./hs_web_socket_service");
-const HSIWebSocketService = require("./hs_web_socket_service");
+const BacktestJob = require("./backtest_job");
 
 module.exports = {
-  kotakNeoService,
   redisService,
-  hsWebSocketService,
-  HSIWebSocketService,
+  BacktestJob,
 };

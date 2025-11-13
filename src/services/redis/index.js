@@ -81,8 +81,8 @@ function RedisService() {
     this.eventListeners = [];
 
     this.eventListeners.push(
-      appEvents.onEvent(EVENT.HS_WEB_SOCKET.MARKET_FEED, (data) => {
-        this.publish(REDIS.CHANNEL.MARKET_FEED, data);
+      appEvents.onEvent(EVENT.BACKTEST.UPDATE, (serverId, data) => {
+        this.publish(REDIS.CHANNEL.BACKTEST(serverId), data);
       })
     );
   };
