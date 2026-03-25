@@ -7,5 +7,6 @@ const BACKTEST = {
 module.exports = {
   EVENT: {
     BACKTEST,
+    STORE_MARKET_FEED: (SCRIP) => `EVENT/STORE_MARKET_FEED/${SCRIP}`,
   },
 };
