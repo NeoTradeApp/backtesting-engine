@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      timestamp: {
+      time: {
         type: Sequelize.BIGINT
       },
       open: {

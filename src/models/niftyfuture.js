@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   NiftyFuture.init({
-    timestamp: DataTypes.BIGINT,
+    time: DataTypes.BIGINT,
     open: DataTypes.DECIMAL,
     high: DataTypes.DECIMAL,
     low: DataTypes.DECIMAL,

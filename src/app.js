@@ -1,15 +1,14 @@
-const {
-  redisService,
-} = require("@services");
+const { redisService, storeNifyFuturesService } = require("@services");
 
 function App() {
   this.start = async () => {
     await redisService.connect();
+    storeNifyFuturesService.start();
   };
 
   this.stop = async () => {
-    database.disconnect();
     await redisService.disconnect();
+    storeNifyFuturesService.stop();
   };
 }
 

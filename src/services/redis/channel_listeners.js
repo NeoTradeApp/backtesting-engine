@@ -22,8 +22,9 @@ const keySetListener = (key) => {
 const storeNiftyFutures = (candles) =>
   appEvents.emit(EVENT.STORE_MARKET_FEED(SCRIPS.SCRIP_TYPE.NIFTY_FUTURE), JSON.parse(candles));
 
-const storeNiftyIndex = () =>
+const storeNiftyIndex = (candles) => {
   appEvents.emit(EVENT.STORE_MARKET_FEED(SCRIPS.SCRIP_TYPE.NIFTY_INDEX), JSON.parse(candles));
+}
 
 module.exports = {
   redisChannelListeners: {

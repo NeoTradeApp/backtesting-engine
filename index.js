@@ -6,6 +6,10 @@ dotEnv.config();
 const { logger } = require("@config/logger");
 logger.config();
 
+const Database = require("@database");
+const database = new Database();
+database.connect();
+
 const App = require("./src/app");
 const app = new App();
 app.start();
@@ -16,6 +20,7 @@ const handleUncaughtException = () => {
     process.on(event, (error) => {
       logger.error(`Gracefully shutting down the engine. [${event}]`, error);
       app.stop();
+      database.disconnect();
       process.exit(1);
     })
   );
