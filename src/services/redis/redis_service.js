@@ -81,9 +81,9 @@ function RedisService() {
     this.eventListeners = [];
 
     this.eventListeners.push(
-      appEvents.onEvent(EVENT.BACKTEST.UPDATE, (serverId, data) => {
-        this.publish(REDIS.CHANNEL.BACKTEST(serverId), data);
-      })
+      // appEvents.onEvent(EVENT.BACKTEST.UPDATE, (serverId, data) => {
+      //   this.publish(REDIS.CHANNEL.BACKTEST(serverId), data);
+      // })
     );
   };
 

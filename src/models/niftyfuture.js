@@ -24,6 +24,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'NiftyFuture',
+    underscored: true,
+    timestamps: false,
   });
 
   return NiftyFuture;

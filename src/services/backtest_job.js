@@ -1,6 +1,6 @@
 const { fork } = require('child_process');
 const { appEvents } = require("@events");
-const { EVENT } = require("@constants");
+const { REDIS, EVENT } = require("@constants");
 const { debounceWithBurst } = require("@utils");
 const { redisService } = require("./redis");
 
@@ -8,7 +8,7 @@ function BacktestJob(backtestJobId, backtestJobData) {
   const { userId, serverId, params } = backtestJobData || {};
 
   const emitBacktestResultToEvents = debounceWithBurst((payload) => {
-    appEvents.emit(EVENT.BACKTEST.UPDATE, serverId, {
+    redisService.publish(REDIS.CHANNEL.BACKTEST(serverId), {
       backtestJobId,
       userId,
       params,
@@ -32,7 +32,7 @@ function BacktestJob(backtestJobId, backtestJobData) {
 
 const addEventListeners = () => {
   appEvents.onEvent(EVENT.BACKTEST.INITIATED, async (backtestJobId) => {
-    const backtestJobData = await redisService.get(`backtest/${backtestJobId}`);
+    const backtestJobData = await redisService.get(REDIS.KEY.BACKTEST(backtestJobId));
     new BacktestJob(backtestJobId, backtestJobData).start();
   });
 }

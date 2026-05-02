@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('NiftyFutures', {
+    await queryInterface.createTable('nifty_futures', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -28,14 +28,6 @@ module.exports = {
         type: Sequelize.BIGINT
       },
       expiry: {
-        type: Sequelize.DATE
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     });

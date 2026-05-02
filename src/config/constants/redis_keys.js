@@ -1,4 +1,5 @@
 const KEY = {
+  BACKTEST: (backtestJobId) => `REDIS/KEY/BACKTEST/${backtestJobId}`,
 };
 
 const databaseIndex = 0;
