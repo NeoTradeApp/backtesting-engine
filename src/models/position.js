@@ -39,16 +39,16 @@ module.exports = (sequelize, DataTypes) => {
       name: DataTypes.STRING,
       description: DataTypes.STRING,
 
-      entry_price: DataTypes.DECIMAL(12, 2),
-      exit_price: DataTypes.DECIMAL(12, 2),
+      entryPrice: DataTypes.DECIMAL(12, 2),
+      exitPrice: DataTypes.DECIMAL(12, 2),
 
-      entry_time: DataTypes.DATE,
-      exit_time: DataTypes.DATE,
+      entryTime: DataTypes.DATE,
+      exitTime: DataTypes.DATE,
 
       target: DataTypes.DECIMAL(12, 2),
       stoploss: DataTypes.DECIMAL(12, 2),
-      trailing_stoploss: DataTypes.DECIMAL(12, 2),
-      trail_stoploss_at: DataTypes.DECIMAL(12, 2),
+      trailingStoploss: DataTypes.DECIMAL(12, 2),
+      trailStoplossAt: DataTypes.DECIMAL(12, 2),
     },
     {
       sequelize,

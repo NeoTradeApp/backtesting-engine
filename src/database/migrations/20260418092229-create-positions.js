@@ -25,6 +25,11 @@ module.exports = {
         defaultValue: 0,
       },
 
+      net_pnl: {
+        type: Sequelize.DECIMAL(12, 2),
+        defaultValue: 0,
+      },
+
       status: {
         type: Sequelize.ENUM("ACTIVE", "CLOSED", "CANCELLED"),
       },
